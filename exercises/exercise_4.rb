@@ -17,3 +17,10 @@ puts "There are #{@mens_stores.count} stores that carry mens apparel."
 @mens_stores.each do |store|
   puts "Store name: #{store.name}, annual revenue: #{store.annual_revenue}"
 end
+
+@womens_stores = Store.where(womens_apparel: true)
+puts "There are #{@womens_stores.count} stores that carry womens apparel."
+
+@womens_stores.each do |store|
+  puts "Store name: #{store.name}, annual revenue: #{store.annual_revenue}"
+end
