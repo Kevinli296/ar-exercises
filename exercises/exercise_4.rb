@@ -18,9 +18,9 @@ puts "There are #{@mens_stores.count} stores that carry mens apparel."
   puts "Store name: #{store.name}, annual revenue: #{store.annual_revenue}"
 end
 
-@womens_stores = Store.where(womens_apparel: true)
-puts "There are #{@womens_stores.count} stores that carry womens apparel."
+@womens_stores_under_1m = Store.where("womens_apparel = true AND annual_revenue < 1000000")
+puts "There are #{@womens_stores_under_1m.count} stores that carry womens apparel and make under $1M."
 
-@womens_stores.each do |store|
+@womens_stores_under_1m.each do |store|
   puts "Store name: #{store.name}, annual revenue: #{store.annual_revenue}"
 end
